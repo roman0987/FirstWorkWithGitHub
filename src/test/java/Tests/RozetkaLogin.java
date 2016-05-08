@@ -40,14 +40,4 @@ public class RozetkaLogin {
         Assert.assertTrue(loginPage.checkUserNameAfterLogin(expectedUserNameAfterLogin));
     }
 
-//    @Test
-//    public void rozetkaLogout() throws InterruptedException {
-//        RozetkaLogoutPage logoutPage = new RozetkaLogoutPage(driver);
-//        RozetkaLoginPage loginPage = new RozetkaLoginPage(driver);
-//        loginPage.login(userEmail, userPassword);
-//        Thread.sleep(9000);
-//        logoutPage.logout();
-//        Thread.sleep(9000);
-//        Assert.assertTrue(logoutPage.checkedUserNameAfterLogout(exexpectedUserNameAfterLogout));
-//    }
 }
