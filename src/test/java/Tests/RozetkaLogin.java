@@ -2,12 +2,10 @@ package Tests;
 
 import Pages.RozetkaLoginPage;
 import SetUp.SetUp;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 /**
  * Created by timoha on 19.04.2016.
@@ -15,6 +13,7 @@ import org.testng.annotations.Test;
 public class RozetkaLogin {
 
     WebDriver driver;
+    String expectedUserName = "войдите в личный кабинет";
 
     @BeforeMethod
     public void setUp() {
@@ -31,7 +30,7 @@ public class RozetkaLogin {
     public Object[][] getData() {
         return new Object[][]{
                 {"utes4all@gmail.com", "test12345", "testjavaqa"},
-                //{"ramzes0987@mail.ru", "test12345", "Roman"}
+                {"ramzes0987@mail.ru", "test12345", "Roman"}
         };
     }
 
@@ -44,8 +43,15 @@ public class RozetkaLogin {
     }
 
 
-    @Test(dataProvider = "credentials", dependsOnMethods = "RozetkaLogin")
-    public void RozetkaLogOut() throws InterruptedException {
-        RozetkaLoginPage loginPage = new RozetkaLoginPage(driver);
-    }
+//    @Test(dependsOnMethods = "RozetkaLogin")
+//    public void RozetkaLogOut() throws InterruptedException {
+//        driver.findElement(By.cssSelector(".header-user-link.sprite-side.novisited.xhr")).click();
+//        Thread.sleep(1000);
+//        System.out.println("Click name");
+//        driver.findElement(By.cssSelector(".header-popup-header-user-i-link.sprite-side.novisited.xhr")).click();
+//        Thread.sleep(5000);
+//        System.out.println("Click Exit");
+//        String userNameAfterLogOut = driver.findElement(By.cssSelector(".header-user-link.sprite-side.novisited.xhr")).getText();
+//        Assert.assertTrue(expectedUserName.equalsIgnoreCase(userNameAfterLogOut));
+//    }
 }
